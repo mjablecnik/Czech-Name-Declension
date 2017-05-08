@@ -4,7 +4,7 @@
  *
  * Converts Czech nouns and persons' names to the requested declension.
  *
- * @version    2.0 (2017-05-08 10:59:00 GMT)
+ * @version    2.1 (2017-05-08 22:22:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -112,7 +112,7 @@ class CzechNameDeclension {
     }
     #----
     # Honzík, Maxík, Pavlík, Petřík
-    if (iconv_substr($lcName, -2) == 'ek')) {
+    if (iconv_substr($lcName, -2) == 'ík')) {
       return preg_replace('/^(.*)ík$/i', '$1íku', $name);
     }
   }
