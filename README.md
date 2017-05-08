@@ -7,9 +7,13 @@ Converts Czech nouns and persons' names to the requested declension.
 ```php
 use peterkahl\CzechNameDeclension\CzechNameDeclension;
 
-echo CzechNameDeclension::getVocative('Vojta');   # Vojto
+echo CzechNameDeclension::getVocative('Antonín Dvořák');   # Antoníne Dvořáku
 
-echo CzechNameDeclension::getVocative('Antonín'); # Antoníne
+echo CzechNameDeclension::getVocative('Bedřich Smetana');  # Bedřichu Smetano
 
-echo CzechNameDeclension::getVocative('Bedřich'); # Bedřichu
+echo CzechNameDeclension::getVocative('Oldřiška');         # Oldřiško
+
+# Also works with nouns
+echo CzechNameDeclension::getVocative('hrad');             # hrade
+
 ```

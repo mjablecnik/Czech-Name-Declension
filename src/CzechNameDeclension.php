@@ -26,8 +26,6 @@
 
 namespace peterkahl\CzechNameDeclension;
 
-use \Exception;
-
 class CzechNameDeclension {
 
   #===================================================================
