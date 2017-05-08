@@ -4,7 +4,7 @@
  *
  * Converts Czech nouns and persons' names to the requested declension.
  *
- * @version    1.0 (2017-05-08 10:23:00 GMT)
+ * @version    2.0 (2017-05-08 10:59:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -32,7 +32,31 @@ class CzechNameDeclension {
 
   #===================================================================
 
+  /**
+   * Returns Vocative (5th case) of given noun (5th case)
+   * @var string
+   * The argument string may contain multiple nouns separated by
+   * whitespace.
+   */
   public static function getVocative($name) {
+    if (strpos($name, ' ') !== false) {
+      $arr = explode(' ', $name);
+      $new = array();
+      foreach ($arr as $noun) {
+        $new[] = self::getSingleVocative($noun);
+      }
+      return implode(' ', $new);
+    }
+    return self::getSingleVocative($name);
+  }
+
+  #===================================================================
+
+  /**
+   * Returns Vocative (5th case) of given single noun (5th case)
+   * @var string
+   */
+  public static function getSingleVocative($name) {
     #----
     # Petr
     if (iconv_substr($lcName, -2) == 'tr') {
