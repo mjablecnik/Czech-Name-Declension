@@ -4,7 +4,7 @@
  *
  * Converts Czech nouns and persons' names to the requested declension.
  *
- * @version    2.1 (2017-05-08 22:22:00 GMT)
+ * @version    2.2 (2017-05-21 09:31:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -55,10 +55,16 @@ class CzechNameDeclension {
    * @var string
    */
   public static function getSingleVocative($name) {
+    $lcName = mb_strtolower($name);
     #----
     # Petr
     if (iconv_substr($lcName, -2) == 'tr') {
       return preg_replace('/^(.*)tr$/i', '$1tře', $name);
+    }
+    #----
+    # Peter
+    if ($lcName == 'peter') {
+      return 'Peter';
     }
     #----
     # Eliška, Jana, Marta, Margareta, Hana, Adéla, Agáta, Božena,
@@ -107,12 +113,12 @@ class CzechNameDeclension {
     }
     #----
     # Zbyněk, Vašek, Čeněk, Hyněk, Mirek, Radek, Vaněk
-    if (iconv_substr($lcName, -2) == 'ek')) {
+    if (iconv_substr($lcName, -2) == 'ek') {
       return preg_replace('/^(.*)ek$/i', '$1ku', $name);
     }
     #----
     # Honzík, Maxík, Pavlík, Petřík
-    if (iconv_substr($lcName, -2) == 'ík')) {
+    if (iconv_substr($lcName, -2) == 'ík') {
       return preg_replace('/^(.*)ík$/i', '$1íku', $name);
     }
   }
