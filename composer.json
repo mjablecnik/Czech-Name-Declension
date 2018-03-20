@@ -4,7 +4,7 @@
     "description": "Converts Czech nouns and persons' names to the requested declension.",
     "keywords": ["grammar", "grammatical", "czech-grammar", "czech-language", "czech"],
     "homepage": "https://github.com/peterkahl/Czech-Name-Declension",
-    "license": "Apache License Version 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Peter Kahl",
